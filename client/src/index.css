@@ -1,8 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Outfit:wght@100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-white;
+  }
+}
+
 
 *{
     font-family: "Michroma", sans-serif;
-    /* background-color: black; */
+     background-color: black; 
     color: white; 
+} 
+*/
+/* @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-white bg-black font-[Michroma];
+  }
 }
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@import "tailwindcss/theme";
+
+@layer base {
+  body {
+    @apply text-white;
+    font-family: "Michroma", sans-serif;
+  }
+}
+
