@@ -2,6 +2,7 @@ import React from 'react'
 import { assets } from '../assets/assets'
 import { Star } from "lucide-react"
 import { StretchHorizontal } from 'lucide-react'
+import {SignIn} from '@clerk/clerk-react'
 // import bgImage from "../assets/bgImage.png"
 const Login = () => {
     // console.log("Background image path:", assets.bgImage)
@@ -32,13 +33,14 @@ const Login = () => {
                     </div>
                 </div>
                 <h1 className='text-3xl md:text-6xl md:pb-2 font-bold bg-gradient-to-r text-white bg-clip-text'>More then just friends truly connect</h1>
+                {/* <h1 className='text-3xl md:text-6xl md:pb-2 font-bold bg-gradient-to-r text-white bg-clip-text'>Smart Booking Reserv Rooms in Seconds.</h1> */}
                 <p className='mt-2 text-xl md:text-3xl text-white max-w-72 md:max-w-md'>Connect with global community on pingup.</p>
             </div>
             <span className='md:h-10 '></span>
         </div>
         {/* Right side login form  */}
-        <div className='flex-1 flex items-center justify-center p-6 sm:p-10'> 
-
+        <div className='flex-1 flex items-center justify-center p-6 sm:p-10 '> 
+            <SignIn className=""/>
         </div>
 
     </div>

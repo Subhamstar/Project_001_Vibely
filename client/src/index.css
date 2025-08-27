@@ -37,7 +37,8 @@
 
 @layer base {
   body {
-    @apply text-white;
+    /* @apply text-white; */
+    /* background-color: black; */
     font-family: "Michroma", sans-serif;
   }
 }
