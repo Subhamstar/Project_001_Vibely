@@ -31,15 +31,29 @@
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @import "tailwindcss/theme";
-
-@layer base {
+/* @layer base { */
   body {
     /* @apply text-white; */
     /* background-color: black; */
-    font-family: "Michroma", sans-serif;
+    /* font-family: "Michroma", sans-serif; */
+    font-family: "Montserrat", sans-serif;
+  }
+/* } */
+/*  */
+@layer utilities {
+  .font-custom {
+    font-famil: "Montserrat","sans-serif" !important;
   }
 }
-
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
