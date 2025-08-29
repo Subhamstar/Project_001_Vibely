@@ -100,12 +100,12 @@ const StoriesBar = () => {
             </p>
             {
                 story.media_type!=='text' &&(
-                    <div className='absolute inset-0 z-1 rounded-lg bg-black overflow-hidden'>
+                    <div className='absolute inset-0 z-0 rounded-lg bg-black overflow-hidden'>
                         {
                         story.media_type==="image"?
-                        <img src={story.media_url} alt="" className='h-full w-full object-cover hover:scale-110 transition duratio-500 opacity-70 hover:opacity-80'/>
+                        <img src={story.media_url} alt="" className='h-full w-full object-cover hover:scale-110 transition duration-500 opacity-70 hover:opacity-80'/>
                         :
-                        <video src={story.media_url} className='h-full w-full object-cover hover:scale-110 transition duratio-500 opacity-70 hover:opacity-80'></video>
+                        <video src={story.media_url} className='h-full w-full object-cover hover:scale-110 transition duration-500 opacity-70 hover:opacity-80'></video>
                         } 
                     </div>
                 )
@@ -116,7 +116,8 @@ const StoriesBar = () => {
       </div>
 
       {/* Add Story Modals  */}
-      {setShowModal && <StoryModal setShowModal={setShowModal} fetchStories={fetchStories}/> }
+      {showModal && <StoryModal setShowModal={setShowModal} fetchStories={fetchStories} />}
+
     </div>
   )
 }

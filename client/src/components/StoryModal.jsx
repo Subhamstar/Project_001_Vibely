@@ -1,4 +1,4 @@
-import { ArrowLeft, Sparkle, Type, Upload } from 'lucide-react';
+import { ArrowLeft, Sparkle, Text, Type, Upload } from 'lucide-react';
 import React, { useState } from 'react';
 
 const StoryModal = ({ setShowModal, fetchStories }) => {
@@ -33,6 +33,9 @@ const StoryModal = ({ setShowModal, fetchStories }) => {
       setMode("media");
     }
   };
+  const handleCreateStory=()=>{
+
+  }
 
   return (
     <div className="fixed inset-0 z-110 min-h-screen bg-black/80 backdrop-blur text-white flex items-center justify-center p-4">
@@ -87,7 +90,7 @@ const StoryModal = ({ setShowModal, fetchStories }) => {
             onClick={() => { setMode('text'); setMedia(null); setPreviewUrl(null); }} 
             className={`flex-1 flex items-center justify-center gap-2 p-2 rounded cursor-pointer ${mode === 'text' ? "bg-white text-black" : "bg-zinc-800"}`}
           >
-            <Type size={18}/> Text
+            <Text size={18}/> Text
           </button>
 
           <label className={`flex-1 flex items-center justify-center gap-2 p-2 rounded cursor-pointer ${mode === 'media' ? "bg-white text-black" : "bg-zinc-800"}`}>
@@ -100,7 +103,14 @@ const StoryModal = ({ setShowModal, fetchStories }) => {
             <Upload size={18}/> Photo/Video
           </label>
         </div>
-        <button className='flex items-center justify-center gap-2 text-white py-3 mt-4 w-full rounded bg-gradient-to-r from bg-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 active:scale-95 transition cursor-pointer'>
+        <button onClick={() => 
+            toast.promise(handleCreateStory(), {
+              loading: 'Saving...',
+              success: <p>Story Added</p>,
+              error: (e) => <p>{e.message}</p>,
+            })
+          }
+        className='flex items-center justify-center gap-2 text-white py-3 mt-4 w-full rounded bg-gradient-to-r from bg-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 active:scale-95 transition cursor-pointer'>
             <Sparkle/>Create Story
         </button>
 
