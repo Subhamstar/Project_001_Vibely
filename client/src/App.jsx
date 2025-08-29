@@ -1,19 +1,21 @@
-  import React from 'react'
-  import { Route, Routes } from 'react-router-dom'
-  import Login from './pages/login'
-  import Messages from './pages/Messages'
-  import ChatBox from './pages/ChatBox'
-  import Connections from './pages/Connections'
-  import Discover from './pages/Discover'
-  import Profile from './pages/Profile'
-  import CreatePost from './pages/CreatePost'
-  import Feed from './pages/Feed'
-  import {useUser} from '@clerk/clerk-react';
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Login from './pages/login'
+import Messages from './pages/Messages'
+import ChatBox from './pages/ChatBox'
+import Connections from './pages/Connections'
+import Discover from './pages/Discover'
+import Profile from './pages/Profile'
+import CreatePost from './pages/CreatePost'
+import Feed from './pages/Feed'
+import {useUser} from '@clerk/clerk-react';
 import Layout from './pages/Layout'
+import {Toaster} from 'react-hot-toast'
   const App = () => {
     const {user}=useUser();
     return (
       <>
+      <Toaster/>
       <Routes>
         <Route path='/' element={!user ? <Login/>:<Layout/> }>
           <Route index element={<Feed/>}/>
