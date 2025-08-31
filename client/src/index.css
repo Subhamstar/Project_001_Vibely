@@ -57,3 +57,8 @@
 .animate-spin-slow {
   animation: spin-slow 3s linear infinite;
 }
+
+
+.no-scrollbar::-webkit-scrollbar{
+  display:none
+}
